@@ -1,0 +1,194 @@
+body {
+    font: 16px/1.5 'OpenSans-Light', Helvetica, Helvetica Neue, Arial, sans-serif;
+    background-color: #FFF6ED;
+    color: #222222;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1140px;
+    position: relative;
+    z-index: 2;
+}
+
+/* =General */
+h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-top: 0;
+    font-weight: 300;
+}
+#intro {
+    font-size: 14px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    max-width: 80%;
+    margin: 0 auto;
+}
+#intro img {
+    max-width: 70%;
+}
+
+/* =Main */
+.section-static {
+    padding: 40px 0;
+    background-color: #fff;
+}
+.bcg-blue {
+    background-color: #E8F4FF;
+    overflow: hidden;
+}
+.copy {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.parts {
+    list-style: none;
+    margin: 100px 0 0 0;
+    padding: 0;
+}
+.part {
+    padding-bottom: 60px;
+    overflow: hidden;
+    display: flex;
+}
+.part .image {
+    width: 90px;
+    margin: 0 30px;
+    background: url('../img/img_pen.png') no-repeat 50% 0;
+    background-size: 90px auto;
+}
+.parts h3 {
+    font-size: 13px;
+    width: calc(50% - 90px);
+    margin: 0 0 0 auto;
+    text-align: right;
+    /* hiding the text to focus on the image 
+    background-color: pink;
+    visibility: hidden;  */
+}
+.parts p {
+    font-size: 13px;
+    width: calc(50% - 90px);
+    margin: 0 auto 0 0;
+    text-align: left;
+    /* hiding the text to focus on the image 
+    background-color: yellow;  
+    visibility: hidden;  */
+}
+.part1 .image {
+    background-position: 50% 0;
+    min-height: 110px;
+}
+.part2 .image {
+    background-position: 50% -232px;
+    min-height: 370px;
+}
+
+/* this is the pen body */
+.part3 {
+    z-index: 2;
+    position: relative;
+}
+
+.part3 .image {
+    background: url('../img/img_pen-body.png') no-repeat 50% 0;
+    background-size: 90px auto;
+    min-height: 580px;
+}
+.part4 .image {
+    background-position: 50% -626px;
+    min-height: 430px;
+
+}
+.part5 {
+    z-index: 1;
+    position: relative;
+}
+
+.part5 .image {
+    background-position: 50% -1156px;
+    min-height: 150px;
+}
+.part6 .image {
+    background-position: 50% -1439px;
+    min-height: 150px;
+}
+
+/* =Fade In Text */
+.part h3,
+.part p {
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    visibility: hidden;
+}
+.part.fade-in h3,
+.part.fade-in p {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.part h3 {
+    transform: translateX(-20px);
+}
+.part p {
+    transform: translateX(20px);
+} 
+
+
+/* =Footer */
+.footer-container {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #06060d; 
+}
+.footer-container .wrapper {
+    width: 80%;
+    max-width: none;
+    margin: 0 10%; 
+}
+.footer-container h3 {
+    margin: 0;
+    padding: 20px 0;
+    font-weight: normal; 
+}
+.footer-container a {
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+/* ==========================================================================
+    Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    .parts p, .parts h3 {
+        font-size: 18px;
+        /* hiding the text to focus on the image 
+        visibility: hidden; */
+    }
+    h1 {
+        font-size: 65px;
+        line-height: 1.2;
+    }
+    #intro {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+}
