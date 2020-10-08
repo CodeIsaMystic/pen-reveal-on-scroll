@@ -7,11 +7,11 @@ function getTopPartsHeight() {
 
 function init() {
 
-    //move part 3 to cover the part 2
-    gsap.set('.part3', {
-        y: () => {
-            return -(getTopPartsHeight());
-        },
+    /**
+     * move part 3 to cover the part 2
+     *  
+    **/ 
+    gsap.set('.part3', { y: () => { return - getTopPartsHeight()},
         scrollTrigger: {
             id: 'pen-body',
             trigger: '.part3',
@@ -27,26 +27,26 @@ function init() {
 
     /**
      * Add class to all parts to reveal their text associated
+     * 
      */
     const allParts = gsap.utils.toArray('.part');
 
-    allParts.forEach((part, index) => {
 
+
+    allParts.forEach((part, index) => {
         let startPosition = 'top center';
 
         if (index === 2) {
             startPosition = `top+=${getTopPartsHeight()} center`;
         }
 
-        gsap.set(part, {
-            scrollTrigger: {
+        gsap.set(part, { scrollTrigger: {
                 id: `${part.getAttribute('class')}`,
                 trigger: part,
                 start: startPosition,
                 //markers: true,
                 toggleClass: 'fade-in'
-            }
-        });
+            }});
     });
 
     /** 
@@ -64,9 +64,7 @@ function init() {
      */
     gsap.utils.toArray(['.part4', '.part5', '.part6']).forEach((part, index) => {
 
-        gsap.set(part, {
-            y: -partTopOffsets[index]
-        });
+        gsap.set(part, { y: -partTopOffsets[index] });
 
         gsap.to(part, {
             y: 0,
@@ -79,7 +77,6 @@ function init() {
                 scrub: true
             }
         });
-
     });
 }
 
